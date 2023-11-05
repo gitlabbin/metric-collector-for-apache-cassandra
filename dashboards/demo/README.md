@@ -15,7 +15,11 @@ To use:
      
      ````
      export PROJECT_VERSION=$(grep '<revision>' ../../pom.xml | sed -E 's/(<\/?revision>|[[:space:]])//g')
-     docker-compose up 
+     docker-compose up
+     
+     docker-compose -f docker-compose-3.11.yml up --build
+     
+     docker-compose down -v
      ````
      
   3. Open your web browser to [http://localhost:3000](http://localhost:3000)
@@ -27,3 +31,17 @@ To use:
   ````
   
   Refresh the browser to see changes. 
+
+## Running-MCAC-with-DSE 
+https://datastax.my.site.com/support/s/article/Running-MCAC-with-DSE
+
+```shell
+MCAC_ROOT=/path/to/datastax-mcac-agent-0.3.3
+JVM_OPTS="$JVM_OPTS -javaagent:${MCAC_ROOT}/lib/datastax-mcac-agent.jar"
+JVM_OPTS="$JVM_OPTS -Djava.io.tmpdir=/path/to/new/tmp"
+
+```
+
+https://artifacts-zl.talend.com/nexus/content/groups/public/io/netty/netty-transport-native-epoll/4.1.98.Final/
+
+
