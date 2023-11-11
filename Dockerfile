@@ -1,4 +1,4 @@
-FROM riptano/collectd:latest as collectd
+FROM briangxchen/collectd:latest as collectd
 
 FROM maven:3.6.3-jdk-8-openj9 as builder
 
