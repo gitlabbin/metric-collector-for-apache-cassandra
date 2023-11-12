@@ -5,7 +5,7 @@ FROM maven:3.6.3-jdk-8-openj9 as builder
 WORKDIR /build
 
 COPY . ./
-RUN mvn -ff package -DskipTests
+RUN mvn -ff package -DskipTests -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true -Dmaven.wagon.http.ssl.ignore.validity.dates=true
 
 RUN mkdir -p /mcac/lib
 
