@@ -12,7 +12,8 @@ services:
       - "../prometheus/prometheus.yaml:/etc/prometheus/prometheus.yml"
       - "../demo/tg_mcac.json:/etc/prometheus/tg_mcac.json"
   grafana:
-    image: "grafana/grafana:6.7.2"
+    #image: "grafana/grafana:6.7.2"
+    image: "grafana:latest"
     restart: unless-stopped
     ports:
       - "3000:3000"
@@ -24,7 +25,7 @@ services:
     networks:
       - demo_net
     environment:
-      - "GF_INSTALL_PLUGINS=grafana-polystat-panel"
+      #- "GF_INSTALL_PLUGINS=grafana-polystat-panel"
       - "GF_AUTH_ANONYMOUS_ENABLED=true"
   mcac:
     build: ../../
