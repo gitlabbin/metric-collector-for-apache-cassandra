@@ -31,7 +31,7 @@ services:
     volumes:
       - "mcac_data:/mcac"
   cassandra:
-    image: cassandra:3.11
+    image: briangxchen/cassandra:3.11.16
     ports:
       - "9501:9501"
       - "9042:9042"
@@ -57,7 +57,7 @@ services:
       - demo_net
 
   cassandra2:
-    image: cassandra:3.11
+    image: briangxchen/cassandra:3.11.16
     ports:
       - "9501"
       - "9042"
